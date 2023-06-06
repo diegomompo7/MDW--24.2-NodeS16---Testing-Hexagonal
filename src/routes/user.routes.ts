@@ -121,6 +121,7 @@ userRouter.put("/:id", isAuth, async (req: any, res: Response, next: NextFunctio
     }
 
     const userToUpdate = await User.findById(id);
+    console.log(userToUpdate)
     if (userToUpdate) {
       Object.assign(userToUpdate, req.body);
       await userToUpdate.save();
